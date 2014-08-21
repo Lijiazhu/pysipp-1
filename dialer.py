@@ -5,7 +5,7 @@ class Dialer(object):
         self.proxy = proxy
 
     def place_call(self, dnis, proxy):
-        command = ["sipp", "-s" ,dnis, proxy, "-sn" ,"uac" ,"-l", "1" ,"-m" ,"1" ,"-r", "1"]
+        command = ["sipp", "-s" ,dnis, proxy, "-sn" ,"uac" ,"-l", "1" ,"-m" ,"1" ,"-d", "8000"]
         file = open("test_results.csv","a")
         try:
             sipp_call = subprocess.check_call(command)
@@ -14,7 +14,7 @@ class Dialer(object):
 
                 result = True
         except:
-            file.write(dnis+","+proxy+","+"pass"+"\n")
+            file.write(dnis+","+proxy+","+"fail"+"\n")
             result = False
         file.close()
         return result
