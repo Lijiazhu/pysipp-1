@@ -1,5 +1,6 @@
 from carrier_test import CarrierTest
 
+results = []
 phone_numbers = ["9995551212","999","18187205417"]
 for p in phone_numbers:
     proxies = ["216.52.221.169","localhost"]
